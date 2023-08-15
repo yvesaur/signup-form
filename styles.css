@@ -1,0 +1,58 @@
+/* RESETS */
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+fieldset {
+  border: none;
+}
+
+/* ---- */
+
+:root {
+  --font-size: 16px;
+  --font-color: #f2f2f2;
+
+  --primary-color: #ffec00;
+  --secondary-color: #f2cb05;
+  --tertiary-color: #b9bf04;
+  --form-color: #035918;
+  --form-color1: #02731e;
+}
+
+html {
+  font-size: var(--font-size);
+  color: var(--font-color);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(
+    ellipse at center,
+    var(--primary-color),
+    var(--form-color)
+  );
+}
+
+.form-container {
+  display: flex;
+  overflow: clip;
+
+  height: 600px;
+  width: 700px;
+  border-radius: 1rem;
+}
+
+.form-container img {
+  height: 100%;
+}
+
+.form-container > form {
+  width: 100%;
+  background-color: var(--form-color);
+}
