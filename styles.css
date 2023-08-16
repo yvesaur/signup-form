@@ -20,11 +20,15 @@ fieldset {
   --tertiary-color: #b9bf04;
   --form-color: #035918;
   --form-color1: #02731e;
+
+  --default-font: "Mukta";
 }
 
 html {
   font-size: var(--font-size);
   color: var(--font-color);
+  font-family: "Mukta", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
@@ -42,17 +46,89 @@ body {
 .form-container {
   display: flex;
   overflow: clip;
-
   height: 600px;
   width: 700px;
   border-radius: 1rem;
 }
 
+/* .form-container div:first-child {
+  posi
+} */
+
 .form-container img {
   height: 100%;
+}
+
+.form-container .banner-title {
+  font-family: "Tilt Prism", "Mukta", system-ui, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: calc(-800px / 2);
+  text-align: center;
+  font-size: 2rem;
 }
 
 .form-container > form {
   width: 100%;
   background-color: var(--form-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.form-container input {
+  font-size: 1.1rem;
+  height: auto;
+  width: 90%;
+  border-radius: 4px;
+  display: block;
+}
+
+.form-container input:invalid {
+  border: 1px solid red;
+}
+
+#signup-form p:first-child {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#signup-form fieldset:first-of-type {
+  padding: 8px 8px 1rem 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 8px;
+  border-bottom: 2px solid var(--form-color1);
+}
+
+.create-account-btn {
+  padding: 0.8rem 1.2rem;
+  background-color: #026654;
+  color: var(--font-color);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+  border-radius: 0.6rem;
+  border: 1px solid var(--font-color);
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.create-account-btn:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
+#signup-form p:last-child {
+  margin: 8px;
+  font-size: 0.8rem;
+}
+
+#signup-form p:last-child a {
+  text-decoration: none;
+  color: inherit;
+  font-style: italic;
+  font-size: 1rem;
 }

@@ -6,17 +6,65 @@
 
     <!-- <link rel="stylesheet" href="normalize.css" /> -->
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Mukta&family=Tilt+Prism&display=swap");
+    </style>
+
+    <script src="script.js" async defer></script>
     <title>Sign Up!</title>
   </head>
   <body>
     <div class="form-container">
-      <img src="./img/stardew.jpg" alt="" />
+      <div>
+        <img src="./img/stardew.jpg" alt="" />
+        <p class="banner-title">STARDEW VALLEY</p>
+      </div>
       <form action="" id="signup-form" method="post">
+        <p>Stardew Valley Community Center</p>
         <fieldset>
-          <legend>Stardew Valley Citizenship</legend>
-          <label for="username">Username: </label>
-          <input type="text" name="username" id="" />
+          <legend>Become a member</legend>
+          <span>
+            <label for="fName">First Name </label>
+            <input type="text" name="fName" id="fName" />
+          </span>
+
+          <span>
+            <label for="lName">Last Name </label>
+            <input type="text" name="lName" id="lName" />
+          </span>
+
+          <span>
+            <label for="email">Email </label>
+            <input type="email" name="email" id="email" />
+          </span>
+
+          <span>
+            <label for="phone_number">Phone Number </label>
+            <input
+              type="tel"
+              name="phone_number"
+              id="phone_number"
+              pattern="^(09\d{2}\d{3}\d{4})$"
+              placeholder="09*********"
+            />
+          </span>
+
+          <span>
+            <label for="password">Password </label>
+            <input type="password" name="password" id="password" />
+          </span>
+
+          <span>
+            <label for="password_confirm">Confirm Password </label>
+            <input
+              type="password"
+              name="password_confirm"
+              id="password_confirm"
+            />
+          </span>
         </fieldset>
+        <button class="create-account-btn" type="submit">Create Account</button>
+        <p>Already have an account? <a href="">Log In</a></p>
       </form>
     </div>
   </body>
