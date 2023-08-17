@@ -51,10 +51,6 @@ body {
   border-radius: 1rem;
 }
 
-/* .form-container div:first-child {
-  posi
-} */
-
 .form-container img {
   height: 100%;
 }
@@ -143,4 +139,49 @@ form span p.invalid-password {
   position: absolute;
   margin: 0 !important;
   padding: 2px 0 0 0 !important;
+}
+
+@media screen and (max-width: 480px) {
+  .form-container {
+    display: block;
+    margin: 3rem;
+
+    overflow: scroll;
+  }
+
+  .form-container > div > img {
+    width: 100%;
+    height: 450px;
+    margin-bottom: -10px;
+  }
+
+  .form-container .banner-title {
+    top: 0;
+    margin: 0;
+  }
+
+  #signup-form {
+    height: max-content;
+    padding-bottom: 1rem;
+  }
+
+  #signup-form p:first-child {
+    display: none;
+  }
+
+  #signup-form fieldset:first-of-type {
+    padding: 8px 8px 1rem 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 8px;
+    border-bottom: 2px solid var(--form-color1);
+    font-size: 0.8rem;
+    margin-top: 0;
+  }
+
+  #signup-form fieldset legend {
+    font-size: 1rem;
+    padding-top: 8px;
+  }
 }
