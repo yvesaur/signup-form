@@ -104,6 +104,10 @@ body {
   border-bottom: 2px solid var(--form-color1);
 }
 
+#signup-form fieldset legend {
+  font-size: 1.5rem;
+}
+
 .create-account-btn {
   padding: 0.8rem 1.2rem;
   background-color: #026654;
@@ -131,4 +135,12 @@ body {
   color: inherit;
   font-style: italic;
   font-size: 1rem;
+}
+
+/* Display warning text below password input */
+form span p.invalid-password {
+  font-size: 0.5rem !important;
+  position: absolute;
+  margin: 0 !important;
+  padding: 2px 0 0 0 !important;
 }
