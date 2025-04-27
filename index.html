@@ -1,72 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="modern-normalize.css" />
+		<link
+			rel="stylesheet"
+			href="styles.css" />
+		<link
+			rel="shortcut icon"
+			href="./img/logo.png"
+			type="image/x-icon" />
 
-    <!-- <link rel="stylesheet" href="normalize.css" /> -->
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Mukta&family=Tilt+Prism&display=swap");
-    </style>
-    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" />
-
-    <script src="script.js" async defer></script>
-    <title>Sign Up!</title>
-  </head>
-  <body>
-    <div class="form-container">
-      <div>
-        <img src="./img/stardew.jpg" alt="" />
-        <p class="banner-title">STARDEW VALLEY</p>
-      </div>
-      <form action="omsim.html" id="signup-form">
-        <p>Stardew Valley Community Center</p>
-        <fieldset>
-          <legend>Become a member</legend>
-          <span>
-            <label for="fName">First Name </label>
-            <input type="text" name="fName" id="fName" />
-          </span>
-
-          <span>
-            <label for="lName">Last Name </label>
-            <input type="text" name="lName" id="lName" />
-          </span>
-
-          <span>
-            <label for="email">Email </label>
-            <input type="email" name="email" id="email" />
-          </span>
-
-          <span>
-            <label for="phone_number">Phone Number </label>
-            <input
-              type="tel"
-              name="phone_number"
-              id="phone_number"
-              pattern="^(09\d{2}\d{3}\d{4})$"
-              placeholder="09*********"
-            />
-          </span>
-
-          <span>
-            <label for="password">Password </label>
-            <input type="password" name="password" id="password" />
-          </span>
-
-          <span>
-            <label for="password_confirm">Confirm Password </label>
-            <input
-              type="password"
-              name="password_confirm"
-              id="password_confirm"
-            />
-          </span>
-        </fieldset>
-        <button class="create-account-btn" type="submit">Create Account</button>
-        <p>Already have an account? <a href="">Log In</a></p>
-      </form>
-    </div>
-  </body>
+		<script
+			src="script.js"
+			async
+			defer></script>
+		<title>Farmer Membership Form</title>
+	</head>
+	<body>
+		<form
+			action="/"
+			method="post">
+			<div class="form-header-img">
+				<picture>
+					<source
+						media="(max-width: 799px)"
+						srcset="./img/stardew-mobile.jpg" />
+					<source
+						media="(min-width: 800px)"
+						srcset="./img/stardew.jpg" />
+					<img
+						src="./img/stardew.jpg"
+						alt="Form Header Image" />
+				</picture>
+				<h1>ARE YOU A FARMER?</h1>
+			</div>
+			<fieldset class="form-content">
+				<h2>Sign up and become a member at our community center</h2>
+				<p>Required fields are noted by <span class="required">*</span>.</p>
+				<div class="form-controls">
+					<div>
+						<p>
+							<label for="fname"
+								>First name <span class="required">*</span></label
+							>
+						</p>
+						<input
+							type="text"
+							name="fname"
+							id="fname"
+							placeholder="John"
+							required />
+					</div>
+					<div>
+						<p>
+							<label for="lname"
+								>Last name <span class="required">*</span></label
+							>
+						</p>
+						<input
+							type="text"
+							name="lname"
+							id="lname"
+							placeholder="Copper"
+							required />
+					</div>
+					<div>
+						<p>
+							<label for="email"
+								>Email address <span class="required">*</span></label
+							>
+						</p>
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="johncopper@com"
+							required />
+					</div>
+					<div>
+						<p>
+							<label for="phone-number"
+								>Phone number <span class="required">*</span></label
+							>
+						</p>
+						<input
+							type="tel"
+							name="phone-number"
+							id="phone-number"
+							placeholder="09*********"
+							pattern="^09\d{9}$"
+							required />
+					</div>
+					<div>
+						<p>
+							<label for="password"
+								>Password <span class="required">*</span></label
+							>
+						</p>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="Create a strong password"
+							required />
+					</div>
+					<div>
+						<p>
+							<label for="confirm-pass"
+								>Confirm password <span class="required">*</span></label
+							>
+						</p>
+						<input
+							type="password"
+							name="confirm-pass"
+							id="confirm-pass"
+							placeholder="Please re-type your password"
+							required />
+					</div>
+					<fieldset class="farm-pet-radio">
+						<legend>What pet do you have in your farm?</legend>
+						<div>
+							<input
+								type="radio"
+								name="farm-pet"
+								id="dog" />
+							<label for="dog">Dog</label>
+						</div>
+						<div>
+							<input
+								type="radio"
+								name="farm-pet"
+								id="cat" />
+							<label for="cat">Cat</label>
+						</div>
+						<div>
+							<input
+								type="radio"
+								name="farm-pet"
+								id="horse" />
+							<label for="horse">Horse</label>
+						</div>
+					</fieldset>
+				</div>
+				<div class="submission">
+					<button type="submit">REGISTER</button>
+					<p>Already have an account? <a href="">Log In</a></p>
+				</div>
+			</fieldset>
+		</form>
+	</body>
 </html>
