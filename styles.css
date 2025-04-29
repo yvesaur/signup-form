@@ -17,6 +17,10 @@ button {
 	cursor: pointer;
 }
 
+input[type="radio"] {
+	cursor: pointer;
+}
+
 /* RESETS */
 
 :root {
@@ -47,13 +51,31 @@ body {
 	align-items: center;
 }
 
-form {
+.farmer-signup-form {
 	width: 90dvw;
 	height: fit-content;
 	border-radius: 8px;
 	overflow: hidden;
 
 	color: var(--font-clr);
+}
+
+.farmer-signup-form input {
+	outline: none;
+}
+
+.farmer-signup-form input:hover,
+.farmer-signup-form input:focus {
+	outline: none;
+	border: 2px solid var(--bg-gradient-clr);
+}
+
+.farmer-signup-form input:user-invalid {
+	border: 2px solid red;
+}
+
+.farmer-signup-form input:user-valid {
+	border: 2px solid greenyellow;
 }
 
 .form-header-img {
@@ -67,6 +89,7 @@ form {
 }
 
 .form-header-img > h1 {
+	font-family: "Tilt Prism";
 	position: absolute;
 	top: 0;
 	text-align: center;
@@ -120,6 +143,36 @@ span.required {
 	grid-column: span 2;
 }
 
+.farm-pet-radio > legend {
+	font-size: 0.8rem;
+}
+
+.farm-pet-radio input[type="radio"] {
+	appearance: none;
+	height: 0.8rem;
+	width: 0.8rem;
+	border: 1px solid grey;
+	background: #ffff;
+	position: relative;
+}
+
+.farm-pet-radio input[type="radio"]:checked::after {
+	content: "";
+	appearance: none;
+	height: 100%;
+	width: 100%;
+	background: var(--bg-gradient-clr);
+	position: absolute;
+}
+
+.farm-pet-radio input[type="radio"] + label {
+	cursor: pointer;
+}
+
+.farm-pet-radio input[type="radio"] + label:hover {
+	color: var(--bg-gradient-clr);
+}
+
 .submission > button {
 	background-color: #026654;
 	color: var(--font-clr);
@@ -134,10 +187,47 @@ span.required {
 	font-weight: bold;
 }
 
+.submission > button:hover {
+	background-color: #013b31;
+}
+
 .submission > p {
 	font-size: 12px;
 }
 
 .submission > p a {
 	font-weight: bold;
+}
+
+/* For tablets and up */
+@media (min-width: 600px) {
+	.farmer-signup-form {
+		display: flex;
+		height: 600px;
+	}
+
+	.form-header-img {
+		width: fit-content;
+		height: 100%;
+	}
+
+	.form-content {
+		flex-grow: 1;
+	}
+
+	input::placeholder,
+	.farm-pet-radio > legend {
+		font-size: initial;
+	}
+
+	.form-content > h2 {
+		font-size: 1.5rem;
+	}
+}
+
+/* Desktops */
+@media (min-width: 1024px) {
+	.farmer-signup-form {
+		width: 900px;
+	}
 }

@@ -13,7 +13,7 @@
 			href="https://fonts.gstatic.com"
 			crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Tilt+Prism&display=swap"
 			rel="stylesheet" />
 		<link
 			rel="stylesheet"
@@ -35,14 +35,15 @@
 	<body>
 		<form
 			action="/"
-			method="post">
+			method="post"
+			class="farmer-signup-form">
 			<div class="form-header-img">
 				<picture>
 					<source
-						media="(max-width: 799px)"
+						media="(max-width: 600px)"
 						srcset="./img/stardew-mobile.jpg" />
 					<source
-						media="(min-width: 800px)"
+						media="(min-width: 600px)"
 						srcset="./img/stardew.jpg" />
 					<img
 						src="./img/stardew.jpg"
@@ -140,26 +141,30 @@
 								type="radio"
 								name="farm-pet"
 								id="dog" />
-							<label for="dog">Dog</label>
+							<label for="dog">🐶 Dog</label>
 						</div>
 						<div>
 							<input
 								type="radio"
 								name="farm-pet"
 								id="cat" />
-							<label for="cat">Cat</label>
+							<label for="cat">🐱 Cat</label>
 						</div>
 						<div>
 							<input
 								type="radio"
 								name="farm-pet"
 								id="horse" />
-							<label for="horse">Horse</label>
+							<label for="horse">🐴 Horse</label>
 						</div>
 					</fieldset>
 				</div>
 				<div class="submission">
-					<button type="submit">REGISTER</button>
+					<button
+						type="submit"
+						class="submit-button">
+						REGISTER
+					</button>
 					<p>Already have an account? <a href="">Log In</a></p>
 				</div>
 			</fieldset>
