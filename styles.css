@@ -1,187 +1,233 @@
 /* RESETS */
-
-body {
-  margin: 0;
-  height: 100vh;
+h1,
+h2,
+p {
+	margin: 0;
 }
 
-fieldset {
-  border: none;
+picture {
+	padding: 0;
 }
 
-/* ---- */
+a {
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+input[type="radio"] {
+	cursor: pointer;
+}
+
+/* RESETS */
 
 :root {
-  --font-size: 16px;
-  --font-color: #f2f2f2;
+	--bg-gradient-clr: #ffec00;
+	--bg-gradient-clr1: #02731e;
 
-  --primary-color: #ffec00;
-  --secondary-color: #f2cb05;
-  --tertiary-color: #b9bf04;
-  --form-color: #035918;
-  --form-color1: #02731e;
+	--form-bg-clr: #035918;
+	--form-border-clr: #02731e;
 
-  --default-font: "Mukta";
-}
+	--font-clr: #f2f2f2;
 
-html {
-  font-size: var(--font-size);
-  color: var(--font-color);
-  font-family: "Mukta", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-fallbacks: "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	font-family: "Outfit", var(--font-fallbacks);
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	background: radial-gradient(
+		ellipse at center,
+		var(--bg-gradient-clr),
+		var(--bg-gradient-clr1)
+	);
 
-  background: radial-gradient(
-    ellipse at center,
-    var(--primary-color),
-    var(--form-color)
-  );
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.form-container {
-  display: flex;
-  overflow: clip;
-  height: 600px;
-  width: 700px;
-  border-radius: 1rem;
+.farmer-signup-form {
+	width: 90dvw;
+	height: fit-content;
+	border-radius: 8px;
+	overflow: hidden;
+
+	color: var(--font-clr);
 }
 
-.form-container img {
-  height: 100%;
+.farmer-signup-form input {
+	outline: none;
 }
 
-.form-container .banner-title {
-  font-family: "Tilt Prism", "Mukta", system-ui, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-  top: calc(-800px / 2);
-  text-align: center;
-  font-size: 2rem;
+.farmer-signup-form input:hover,
+.farmer-signup-form input:focus {
+	outline: none;
+	border: 2px solid var(--bg-gradient-clr);
 }
 
-.form-container > form {
-  width: 100%;
-  background-color: var(--form-color);
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black;
+.farmer-signup-form input:user-invalid {
+	border: 2px solid red;
 }
 
-.form-container input {
-  font-size: 1.1rem;
-  height: auto;
-  width: 90%;
-  border-radius: 4px;
-  display: block;
+.farmer-signup-form input:user-valid {
+	border: 2px solid greenyellow;
 }
 
-.form-container input:invalid {
-  border: 1px solid red;
+.form-header-img {
+	position: relative;
+	height: 225px;
 }
 
-#signup-form p:first-child {
-  text-align: center;
-  font-size: 1.5rem;
+.form-header-img img {
+	width: 100%;
+	height: 100%;
 }
 
-#signup-form fieldset:first-of-type {
-  padding: 8px 8px 1rem 8px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 8px;
-  border-bottom: 2px solid var(--form-color1);
+.form-header-img > h1 {
+	font-family: "Tilt Prism";
+	position: absolute;
+	top: 0;
+	text-align: center;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 8px 0;
 }
 
-#signup-form fieldset legend {
-  font-size: 1.5rem;
+.form-content {
+	margin: 0;
+	border: none;
+	background-color: var(--form-bg-clr);
+	padding: 4px 8px;
 }
 
-.create-account-btn {
-  padding: 0.8rem 1.2rem;
-  background-color: #026654;
-  color: var(--font-color);
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black;
-  border-radius: 0.6rem;
-  border: 1px solid var(--font-color);
-  margin: 1rem;
-  font-weight: bold;
+input::placeholder {
+	font-size: 12px;
 }
 
-.create-account-btn:hover {
-  background-color: darkred;
-  cursor: pointer;
+span.required {
+	color: red;
 }
 
-#signup-form p:last-child {
-  margin: 8px;
-  font-size: 0.8rem;
+.form-content > h2 {
+	padding: 8px 0 0 0;
+	font-size: 1rem;
 }
 
-#signup-form p:last-child a {
-  text-decoration: none;
-  color: inherit;
-  font-style: italic;
-  font-size: 1rem;
+.form-content > p {
+	font-size: 12px;
+	padding-bottom: 16px;
 }
 
-/* Display warning text below password input */
-form span p.invalid-password {
-  font-size: 0.5rem !important;
-  position: absolute;
-  margin: 0 !important;
-  padding: 2px 0 0 0 !important;
+.form-controls {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px;
+	border-bottom: 1px solid var(--form-border-clr);
+	padding-bottom: 1rem;
 }
 
-@media screen and (max-width: 480px) {
-  .form-container {
-    display: block;
-    margin: 3rem;
+.form-controls > div {
+	display: block;
+}
 
-    overflow: scroll;
-  }
+.form-controls > div input {
+	width: 100%;
+}
 
-  .form-container > div > img {
-    width: 100%;
-    height: 450px;
-    margin-bottom: -10px;
-  }
+.form-controls > .farm-pet-radio {
+	grid-column: span 2;
+}
 
-  .form-container .banner-title {
-    top: 0;
-    margin: 0;
-  }
+.farm-pet-radio > legend {
+	font-size: 0.8rem;
+}
 
-  #signup-form {
-    height: max-content;
-    padding-bottom: 1rem;
-  }
+.farm-pet-radio input[type="radio"] {
+	appearance: none;
+	height: 0.8rem;
+	width: 0.8rem;
+	border: 1px solid grey;
+	background: #ffff;
+	position: relative;
+}
 
-  #signup-form p:first-child {
-    display: none;
-  }
+.farm-pet-radio input[type="radio"]:checked::after {
+	content: "";
+	appearance: none;
+	height: 100%;
+	width: 100%;
+	background: var(--bg-gradient-clr);
+	position: absolute;
+}
 
-  #signup-form fieldset:first-of-type {
-    padding: 8px 8px 1rem 8px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 8px;
-    border-bottom: 2px solid var(--form-color1);
-    font-size: 0.8rem;
-    margin-top: 0;
-  }
+.farm-pet-radio input[type="radio"] + label {
+	cursor: pointer;
+}
 
-  #signup-form fieldset legend {
-    font-size: 1rem;
-    padding-top: 8px;
-  }
+.farm-pet-radio input[type="radio"] + label:hover {
+	color: var(--bg-gradient-clr);
+}
+
+.submission > button {
+	background-color: #026654;
+	color: var(--font-clr);
+
+	margin-top: 1rem;
+	margin-bottom: 8px;
+	padding: 8px 12px;
+
+	border-radius: 0.5rem;
+	border: 1px solid var(--font-clr);
+
+	font-weight: bold;
+}
+
+.submission > button:hover {
+	background-color: #013b31;
+}
+
+.submission > p {
+	font-size: 12px;
+}
+
+.submission > p a {
+	font-weight: bold;
+}
+
+/* For tablets and up */
+@media (min-width: 600px) {
+	.farmer-signup-form {
+		display: flex;
+		height: 600px;
+	}
+
+	.form-header-img {
+		width: fit-content;
+		height: 100%;
+	}
+
+	.form-content {
+		flex-grow: 1;
+	}
+
+	input::placeholder,
+	.farm-pet-radio > legend {
+		font-size: initial;
+	}
+
+	.form-content > h2 {
+		font-size: 1.5rem;
+	}
+}
+
+/* Desktops */
+@media (min-width: 1024px) {
+	.farmer-signup-form {
+		width: 900px;
+	}
 }

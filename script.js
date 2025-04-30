@@ -1,53 +1,29 @@
-const submitButton = document.querySelector(".create-account-btn");
-const formInputs = document.querySelectorAll(".form-container input");
-const passwordInputContainer = document.querySelector("fieldset span:nth-child(6)")
-const invalidPasswordMessage = document.createElement('p');
-const passwordInput = formInputs[4];
-const confirmPasswordInput = formInputs[5];
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirm-pass");
 
-// Check if input is valid
-formInputs.forEach(input => {
-    input.addEventListener('input', () => {
-        if(input.validity.valid){
-            input.style.border = "1px solid greenyellow";
-        } else {
-            input.style.border = "1px solid red";
-        }
-    })
+const farmerSignupForm = document.querySelector(".farmer-signup-form");
+
+console.log(farmerSignupForm);
+
+passwordInput.addEventListener("input", (e) => {
+	if (e.target.value === confirmPasswordInput.value) {
+		passwordInput.style.border = "2px solid greenyellow";
+		confirmPasswordInput.style.border = "2px solid greenyellow";
+	}
 });
 
-// Password confimation validity check 
-confirmPasswordInput.addEventListener('change', () => {
-    if(confirmPasswordInput.value == passwordInput.value){
-        confirmPasswordInput.style.border = "1px solid greenyellow";
-        passwordInput.style.border = "1px solid greenyellow";
+farmerSignupForm.addEventListener("submit", (e) => {
+	e.preventDefault();
 
-        confirmPasswordInput.validity.valid = true;
-        passwordInput.validity.valid = true;
-        
-        passwordInput.setCustomValidity('');
-
-        passwordInputContainer.removeChild(invalidPasswordMessage);
-    } else {
-        confirmPasswordInput.style.border = "1px solid red";
-        passwordInput.style.border = "1px solid red";
-
-
-        confirmPasswordInput.validity.valid = false;
-        passwordInput.validity.valid = false;
-        passwordInput.setCustomValidity("Password does not match.")
-
-        invalidPasswordMessage.classList.add("invalid-password");
-        invalidPasswordMessage.textContent = "*Password did not match."
-        passwordInputContainer.appendChild(invalidPasswordMessage);
-    }
-});
-
-
-submitButton.addEventListener("click", () => {
-
-    // Check if input is invalid
-    formInputs.forEach(input => {
-        input.setAttribute("required", "required");
-    });
+	if (passwordInput.value === confirmPasswordInput.value) {
+		alert("SUCCESS: Thank you for registering!");
+	} else if (passwordInput.value.length <= 8) {
+		alert("Password must be atleast 8 characters or more.");
+		passwordInput.style.border = "2px solid red";
+		confirmPasswordInput.style.border = "2px solid red";
+	} else {
+		passwordInput.style.border = "2px solid red";
+		confirmPasswordInput.style.border = "2px solid red";
+		alert("INCORRECT PASSWORD");
+	}
 });

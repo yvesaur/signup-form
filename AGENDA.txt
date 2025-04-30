@@ -1,0 +1,8 @@
+
+Password validation - DONE
+
+Radio button styling  - DONE
+
+Responsiveness - DONE
+- Tablet
+- Desktop
